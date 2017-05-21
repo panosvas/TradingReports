@@ -37,9 +37,9 @@ public class FetcherImpl implements Fetcher {
 	public List<Instruction> getInstructionsFromClients() {
 		
 		List<Instruction> instructions = new ArrayList<>();
-    	Instruction instruction1 = new Instruction("foo", "B", new Double(0.22), "EUR", "18 May 2017", "20 May 2017", 100L, new Double(20));
-    	Instruction instruction2 = new Instruction("bar", "B", new Double(0.24), "EUR", "18 May 2017", "24 May 2017", 100L, new Double(20));
-    	Instruction instruction3 = new Instruction("bar", "S", new Double(0.24), "EUR", "18 May 2017", "24 May 2017", 100L, new Double(9));
+    	Instruction instruction1 = new Instruction("foo", "B", 0.22d, "EUR", "18 May 2017", "20 May 2017", 100L, 20d);
+    	Instruction instruction2 = new Instruction("bar", "B", 0.24d, "EUR", "18 May 2017", "24 May 2017", 100L, 20d);
+    	Instruction instruction3 = new Instruction("bar", "S", 0.24d, "EUR", "18 May 2017", "24 May 2017", 100L, 9d);
     	
     	instructions.add(instruction1);
     	instructions.add(instruction2);

@@ -55,8 +55,8 @@ public class ReportGeneratorTest {
 	@Test
 	public void givenNullBuyOrSellWhenGeneratingDailyReportThenBuyOrSellMissing() {
 		List<Instruction> instructions = new ArrayList<>();
-		Instruction instruction1 = new Instruction("entity1", "B", new Double(0.22), "EUR", "18 May 2017",
-				"20 May 2017", 100L, new Double(20));
+		Instruction instruction1 = new Instruction("entity1", "B", 0.22d, "EUR", "18 May 2017",
+				"20 May 2017", 100L, 20d);
 
 		instructions.add(instruction1);
 		ValidatedData validatedData = Parser.parseInstructions(instructions);
@@ -73,12 +73,12 @@ public class ReportGeneratorTest {
 	@Test
 	public void givenValidOutgoingWhenGeneratingDailyReportThenShowReport() {
 		List<Instruction> instructions = new ArrayList<>();
-		Instruction instruction1 = new Instruction("entity1", "B", new Double(0.22), "EUR", "18 May 2017",
-				"20 May 2017", 100L, new Double(20));
-		Instruction instruction2 = new Instruction("entity2", "B", new Double(0.24), "AED", "19 May 2017",
-				"24 May 2017", 100L, new Double(17));
-		Instruction instruction3 = new Instruction("entity3", "B", new Double(0.24), "EUR", "19 May 2017",
-				"24 May 2017", 100L, new Double(19));
+		Instruction instruction1 = new Instruction("entity1", "B", 0.22d, "EUR", "18 May 2017",
+				"20 May 2017", 100L, 20d);
+		Instruction instruction2 = new Instruction("entity2", "B", 0.24d, "AED", "19 May 2017",
+				"24 May 2017", 100L, 17d);
+		Instruction instruction3 = new Instruction("entity3", "B", 0.24d, "EUR", "19 May 2017",
+				"24 May 2017", 100L, 19d);
 
 		instructions.add(instruction1);
 		instructions.add(instruction2);
@@ -101,12 +101,12 @@ public class ReportGeneratorTest {
 	@Test
 	public void givenValidIncomingWhenGeneratingDailyReportThenShowReport() {
 		List<Instruction> instructions = new ArrayList<>();
-		Instruction instruction1 = new Instruction("entity1", "S", new Double(0.22), "EUR", "18 May 2017",
-				"20 May 2017", 100L, new Double(20));
-		Instruction instruction2 = new Instruction("entity2", "S", new Double(0.24), "AED", "19 May 2017",
-				"24 May 2017", 100L, new Double(17));
-		Instruction instruction3 = new Instruction("entity3", "S", new Double(0.24), "EUR", "19 May 2017",
-				"24 May 2017", 100L, new Double(19));
+		Instruction instruction1 = new Instruction("entity1", "S", 0.22d, "EUR", "18 May 2017",
+				"20 May 2017", 100L, 20d);
+		Instruction instruction2 = new Instruction("entity2", "S", 0.24d, "AED", "19 May 2017",
+				"24 May 2017", 100L, 17d);
+		Instruction instruction3 = new Instruction("entity3", "S", 0.24d, "EUR", "19 May 2017",
+				"24 May 2017", 100L, 19d);
 
 		instructions.add(instruction1);
 		instructions.add(instruction2);
@@ -197,8 +197,8 @@ public class ReportGeneratorTest {
 	@Test
 	public void givenNullBuyOrSellWhenGeneratingRankingReportThenNothingToShow() {
 		List<Instruction> instructions = new ArrayList<>();
-		Instruction instruction1 = new Instruction("entity1", "B", new Double(0.22), "EUR", "18 May 2017",
-				"20 May 2017", 100L, new Double(20));
+		Instruction instruction1 = new Instruction("entity1", "B", 0.22d, "EUR", "18 May 2017",
+				"20 May 2017", 100L, 20d);
 
 		instructions.add(instruction1);
 		ValidatedData validatedData = Parser.parseInstructions(instructions);
@@ -214,12 +214,12 @@ public class ReportGeneratorTest {
 	@Test
 	public void givenValidOutgoingWhenGeneratingRankingReportThenShowReport() {
 		List<Instruction> instructions = new ArrayList<>();
-		Instruction instruction1 = new Instruction("entity1", "B", new Double(0.22), "EUR", "18 May 2017",
-				"20 May 2017", 100L, new Double(20));
-		Instruction instruction2 = new Instruction("entity2", "B", new Double(0.24), "AED", "19 May 2017",
-				"24 May 2017", 100L, new Double(17));
-		Instruction instruction3 = new Instruction("entity3", "B", new Double(0.24), "EUR", "19 May 2017",
-				"24 May 2017", 100L, new Double(19));
+		Instruction instruction1 = new Instruction("entity1", "B", 0.22d, "EUR", "18 May 2017",
+				"20 May 2017", 100L, 20d);
+		Instruction instruction2 = new Instruction("entity2", "B", 0.24d, "AED", "19 May 2017",
+				"24 May 2017", 100L, 17d);
+		Instruction instruction3 = new Instruction("entity3", "B", 0.24d, "EUR", "19 May 2017",
+				"24 May 2017", 100L, 19d);
 
 		instructions.add(instruction1);
 		instructions.add(instruction2);
@@ -243,12 +243,12 @@ public class ReportGeneratorTest {
 	@Test
 	public void givenValidIncomingWhenGeneratingRankingReportThenShowReport() {
 		List<Instruction> instructions = new ArrayList<>();
-		Instruction instruction1 = new Instruction("entity1", "S", new Double(0.22), "EUR", "18 May 2017",
-				"20 May 2017", 100L, new Double(20));
-		Instruction instruction2 = new Instruction("entity2", "S", new Double(0.24), "AED", "19 May 2017",
-				"24 May 2017", 100L, new Double(17));
-		Instruction instruction3 = new Instruction("entity3", "S", new Double(0.24), "EUR", "19 May 2017",
-				"24 May 2017", 100L, new Double(19));
+		Instruction instruction1 = new Instruction("entity1", "S", 0.22d, "EUR", "18 May 2017",
+				"20 May 2017", 100L, 20d);
+		Instruction instruction2 = new Instruction("entity2", "S", 0.24d, "AED", "19 May 2017",
+				"24 May 2017", 100L, 17d);
+		Instruction instruction3 = new Instruction("entity3", "S", 0.24d, "EUR", "19 May 2017",
+				"24 May 2017", 100L, 19d);
 
 		instructions.add(instruction1);
 		instructions.add(instruction2);

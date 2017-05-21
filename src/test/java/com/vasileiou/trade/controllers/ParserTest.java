@@ -35,8 +35,8 @@ public class ParserTest {
 	@Test
 	public void givenNullEntityWhenParsingThenZeroSize() {
 		List<Instruction> instructions = new ArrayList<>();
-		Instruction instruction1 = new Instruction(null, "B", new Double(0.22), "EUR", "18 May 2017", "20 May 2017",
-				100L, new Double(20));
+		Instruction instruction1 = new Instruction(null, "B", 0.22d, "EUR", "18 May 2017", "20 May 2017",
+				100L, 20d);
 		instructions.add(instruction1);
 
 		ValidatedData validatedData = Parser.parseInstructions(instructions);
@@ -53,8 +53,8 @@ public class ParserTest {
 	@Test
 	public void givenOneInstructionWithNullBuyOrSellWhenParsingThenZeroSize() {
 		List<Instruction> instructions = new ArrayList<>();
-		Instruction instruction1 = new Instruction("entity1", null, new Double(0.22), "EUR", "18 May 2017",
-				"20 May 2017", 100L, new Double(20));
+		Instruction instruction1 = new Instruction("entity1", null, 0.22d, "EUR", "18 May 2017",
+				"20 May 2017", 100L, 20d);
 		instructions.add(instruction1);
 
 		ValidatedData validatedData = Parser.parseInstructions(instructions);
@@ -71,8 +71,8 @@ public class ParserTest {
 	@Test
 	public void givenOneInstructionWithInvalidBuyOrSellWhenParsingThenZeroSize() {
 		List<Instruction> instructions = new ArrayList<>();
-		Instruction instruction1 = new Instruction("entity1", "P", new Double(0.22), "EUR", "18 May 2017",
-				"20 May 2017", 100L, new Double(20));
+		Instruction instruction1 = new Instruction("entity1", "P", 0.22d, "EUR", "18 May 2017",
+				"20 May 2017", 100L, 20d);
 		instructions.add(instruction1);
 
 		ValidatedData validatedData = Parser.parseInstructions(instructions);
@@ -91,7 +91,7 @@ public class ParserTest {
 	public void givenOneInstructionWithNullAgreedFxWhenParsingThenZeroSize() {
 		List<Instruction> instructions = new ArrayList<>();
 		Instruction instruction1 = new Instruction("entity1", "B", null, "EUR", "18 May 2017", "20 May 2017", 100L,
-				new Double(20));
+				20d);
 		instructions.add(instruction1);
 
 		ValidatedData validatedData = Parser.parseInstructions(instructions);
@@ -108,8 +108,8 @@ public class ParserTest {
 	@Test
 	public void givenOneInstructionWithNullCurrencyWhenParsingThenZeroSize() {
 		List<Instruction> instructions = new ArrayList<>();
-		Instruction instruction1 = new Instruction("entity1", "B", new Double(0.22), null, "18 May 2017", "20 May 2017",
-				100L, new Double(20));
+		Instruction instruction1 = new Instruction("entity1", "B", 0.22d, null, "18 May 2017", "20 May 2017",
+				100L, 20d);
 		instructions.add(instruction1);
 
 		ValidatedData validatedData = Parser.parseInstructions(instructions);
@@ -126,8 +126,8 @@ public class ParserTest {
 	@Test
 	public void givenOneInstructionWithNullInstrDateWhenParsingThenZeroSize() {
 		List<Instruction> instructions = new ArrayList<>();
-		Instruction instruction1 = new Instruction("entity1", "B", new Double(0.22), "EUR", null, "20 May 2017", 100L,
-				new Double(20));
+		Instruction instruction1 = new Instruction("entity1", "B", 0.22d, "EUR", null, "20 May 2017", 100L,
+				20d);
 		instructions.add(instruction1);
 
 		ValidatedData validatedData = Parser.parseInstructions(instructions);
@@ -144,8 +144,8 @@ public class ParserTest {
 	@Test
 	public void givenOneInstructionWithNullSettlDateWhenParsingThenZeroSize() {
 		List<Instruction> instructions = new ArrayList<>();
-		Instruction instruction1 = new Instruction("entity1", "B", new Double(0.22), "EUR", "18 May 2017", null, 100L,
-				new Double(20));
+		Instruction instruction1 = new Instruction("entity1", "B", 0.22d, "EUR", "18 May 2017", null, 100L,
+				20d);
 		instructions.add(instruction1);
 
 		ValidatedData validatedData = Parser.parseInstructions(instructions);
@@ -162,8 +162,8 @@ public class ParserTest {
 	@Test
 	public void givenOneInstructionWithNullUnitsWhenParsingThenZeroSize() {
 		List<Instruction> instructions = new ArrayList<>();
-		Instruction instruction1 = new Instruction("entity1", "B", new Double(0.22), "EUR", "18 May 2017",
-				"20 May 2017", null, new Double(20));
+		Instruction instruction1 = new Instruction("entity1", "B", 0.22d, "EUR", "18 May 2017",
+				"20 May 2017", null, 20d);
 		instructions.add(instruction1);
 
 		ValidatedData validatedData = Parser.parseInstructions(instructions);
@@ -180,7 +180,7 @@ public class ParserTest {
 	@Test
 	public void givenOneInstructionWithNullPricePerUnitWhenParsingThenZeroSize() {
 		List<Instruction> instructions = new ArrayList<>();
-		Instruction instruction1 = new Instruction("entity1", "B", new Double(0.22), "EUR", "18 May 2017",
+		Instruction instruction1 = new Instruction("entity1", "B", 0.22d, "EUR", "18 May 2017",
 				"20 May 2017", 100L, null);
 		instructions.add(instruction1);
 
@@ -198,8 +198,8 @@ public class ParserTest {
 	@Test
 	public void givenOneInstructionWithInvalidInstrDateWhenParsingThenZeroSize() {
 		List<Instruction> instructions = new ArrayList<>();
-		Instruction instruction1 = new Instruction("entity1", "B", new Double(0.22), "EUR", "18, May, 2017",
-				"20 May 2017", 100L, new Double(20));
+		Instruction instruction1 = new Instruction("entity1", "B", 0.22d, "EUR", "18, May, 2017",
+				"20 May 2017", 100L, 20d);
 		instructions.add(instruction1);
 
 		ValidatedData validatedData = Parser.parseInstructions(instructions);
@@ -216,8 +216,8 @@ public class ParserTest {
 	@Test
 	public void givenOneInstructionWithInvalidSettlDateWhenParsingThenZeroSize() {
 		List<Instruction> instructions = new ArrayList<>();
-		Instruction instruction1 = new Instruction("entity1", "B", new Double(0.22), "EUR", "18 May 2017", "20/5/2017",
-				100L, new Double(20));
+		Instruction instruction1 = new Instruction("entity1", "B", 0.22d, "EUR", "18 May 2017", "20/5/2017",
+				100L, 20d);
 		instructions.add(instruction1);
 
 		ValidatedData validatedData = Parser.parseInstructions(instructions);
@@ -235,8 +235,8 @@ public class ParserTest {
 	@Test
 	public void givenOneInstructionWithSettlDateBeforeInstrWhenParsingThenZeroSize() {
 		List<Instruction> instructions = new ArrayList<>();
-		Instruction instruction1 = new Instruction("entity1", "B", new Double(0.22), "EUR", "18 May 2017",
-				"17 May 2017", 100L, new Double(20));
+		Instruction instruction1 = new Instruction("entity1", "B", 0.22d, "EUR", "18 May 2017",
+				"17 May 2017", 100L, 20d);
 		instructions.add(instruction1);
 
 		ValidatedData validatedData = Parser.parseInstructions(instructions);
@@ -254,8 +254,8 @@ public class ParserTest {
 	@Test
 	public void givenOneOutgoingInstructionWithValidDataWhenParsingThenReturnValid() {
 		List<Instruction> instructions = new ArrayList<>();
-		Instruction instruction1 = new Instruction("entity1", "B", new Double(0.22), "EUR", "18 May 2017",
-				"20 May 2017", 100L, new Double(20));
+		Instruction instruction1 = new Instruction("entity1", "B", 0.22d, "EUR", "18 May 2017",
+				"20 May 2017", 100L, 20d);
 		instructions.add(instruction1);
 
 		ValidatedData validatedData = Parser.parseInstructions(instructions);
@@ -273,8 +273,8 @@ public class ParserTest {
 	@Test
 	public void givenOneIncomingInstructionWithValidDataWhenParsingThenReturnValid() {
 		List<Instruction> instructions = new ArrayList<>();
-		Instruction instruction1 = new Instruction("entity1", "S", new Double(0.22), "EUR", "18 May 2017",
-				"20 May 2017", 100L, new Double(20));
+		Instruction instruction1 = new Instruction("entity1", "S", 0.22d, "EUR", "18 May 2017",
+				"20 May 2017", 100L, 20d);
 		instructions.add(instruction1);
 
 		ValidatedData validatedData = Parser.parseInstructions(instructions);

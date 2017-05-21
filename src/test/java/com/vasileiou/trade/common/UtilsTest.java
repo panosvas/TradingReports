@@ -164,9 +164,9 @@ public class UtilsTest {
 	 */
 	@Test
 	public void givenOneZeroWhenCalculatingAmountThenZero() {
-		Assert.assertEquals(Utils.calculateAmountOfTrade(new Double(1), 0L, new Double(1)), new Double(0));
-		Assert.assertEquals(Utils.calculateAmountOfTrade(new Double(0), 1L, new Double(1)), new Double(0));
-		Assert.assertEquals(Utils.calculateAmountOfTrade(new Double(1), 1L, new Double(0)), new Double(0));
+		Assert.assertEquals(Utils.calculateAmountOfTrade(1d, 0L, 1d), new Double(0));
+		Assert.assertEquals(Utils.calculateAmountOfTrade(0d, 1L, 1d), new Double(0));
+		Assert.assertEquals(Utils.calculateAmountOfTrade(1d, 1L, 0d), new Double(0));
 	}
 
 	/**
@@ -174,7 +174,7 @@ public class UtilsTest {
 	 */
 	@Test
 	public void givenNonZeroParamsWhenCalculatingAmountThenGreaterThanZero() {
-		Assert.assertEquals(Utils.calculateAmountOfTrade(new Double(150.5), 450L, new Double(0.22)),
+		Assert.assertEquals(Utils.calculateAmountOfTrade(150.5d, 450L, 0.22d),
 				new Double(14899.5));
 	}
 }
