@@ -17,7 +17,7 @@ The main goal of project is given a number of instructions to generate:
 
 1. **Settlement date** can only be a working day. Otherwise update it to the next working day.
 2. **Working week** is Monday to Friday apart from AED and SAR which is Sunday to Thursday.
-3. **USD amount of trade** is the multiplication of units * agreed fx * price per unit
+3. **USD amount of trade** is the multiplication of units * agreed fx * price per unit.
 
 ### Design Assumptions
 
@@ -32,16 +32,7 @@ The main goal of project is given a number of instructions to generate:
 
 Initially, there is a generic fetcher implementation for fetching instructions requested by clients, and for demonstration purposes, there is a random instructions generator. After retrieval, the data are passed to the instructions parser, where they are validated and supplemental fields are generated for every instruction. Moreover, assistant variables for reporting are generated. Finally, report generation is take place with validated data. 
 
-```flow
-st=>start: Start
-e=>end
-op_retrieval=>operation: Instructions Retrieval
-op_parser=>operation: Instructions Parser
-op_daily_reports=>operation: Daily Reports B/S
-op_rank_reports=>operation: Rank Reports B/S
-
-st->op_retrieval->op_parser->op_daily_reports->op_rank_reports->e
-```
+> Instructions Retrieval -> Instructions Parser -> Daily Reports B/S -> Rank Reports B/S
 
 The implementation is following the Test Driven Development (TDD) principles, using unit testing for every crucial component and by examining all involved entities for proper behavior, for both valid and invalid inputs.
 
