@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.2.0" icons="true" generate-combined-fragments="true">  
+  <object id="1" language="java" name="com.vasileiou.trade.TradeReporting" project="trade" 
+    file="/trade/src/main/java/com/vasileiou/trade/TradeReporting.java" binary="false" label="tradeReporting" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="313" y="0"/>    
+    <execution id="2">      
+      <position height="57" width="111" x="5" y="92"/>    
+    </execution>    
+    <execution id="5">      
+      <position height="57" width="111" x="5" y="190"/>    
+    </execution>    
+    <execution id="8">      
+      <position height="57" width="111" x="5" y="302"/>    
+    </execution>    
+    <execution id="11">      
+      <position height="57" width="111" x="5" y="383"/>    
+    </execution>  
+  </object>  
+  <object id="14" language="java" name="com.vasileiou.trade.common.FetcherImpl" project="trade" 
+    file="/trade/src/main/java/com/vasileiou/trade/common/FetcherImpl.java" binary="false" label="fetcherImpl" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="267" y="0"/>    
+    <execution id="4">      
+      <position height="19" width="127" x="120" y="111"/>    
+    </execution>  
+  </object>  
+  <object id="15" language="java" name="com.vasileiou.trade.controllers.Parser" project="trade" 
+    file="/trade/src/main/java/com/vasileiou/trade/controllers/Parser.java" binary="false" label="parser" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="337" y="0"/>    
+    <execution id="7">      
+      <position height="19" width="134" x="251" y="209"/>    
+    </execution>  
+  </object>  
+  <object id="16" language="java" name="com.vasileiou.trade.controllers.ReportGeneratorImpl" project="trade" 
+    file="/trade/src/main/java/com/vasileiou/trade/controllers/ReportGeneratorImpl.java" binary="false" 
+    label="reportGeneratorImpl" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="337" y="0"/>    
+    <execution id="10">      
+      <position height="19" width="144" x="389" y="321"/>    
+    </execution>    
+    <execution id="13">      
+      <position height="19" width="144" x="389" y="402"/>    
+    </execution>  
+  </object>  
+  <note id="17">    
+    <position height="100" width="200" x="599" y="319"/>    
+    <text><![CDATA[Called for both incoming and outgoing]]>
+    </text>  
+  </note>  
+  <message id="3" 
+    operation="getRandomInstructions(int,int,java.util.Calendar,java.util.Calendar):java.util.List&lt;Instruction&gt;" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="6" 
+    operation="parseInstructions(java.util.List&lt;com.vasileiou.trade.models.Instruction&gt;):com.vasileiou.trade.models.ValidatedData" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="7"/>  
+  </message>  
+  <message id="9" 
+    operation="generateDailyReport(java.util.SortedMap&lt;java.util.Date,java.util.List&lt;com.vasileiou.trade.models.Instruction&gt;&gt;,com.vasileiou.trade.enums.BuyOrSell):java.lang.StringBuilder" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="10"/>  
+  </message>  
+  <message id="12" 
+    operation="generateRanking(java.util.HashMap&lt;java.lang.String,java.lang.Double&gt;,com.vasileiou.trade.enums.BuyOrSell):java.lang.StringBuilder" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="13"/>  
+  </message>  
+  <text-link id="18">    
+    <link-end type="SOURCE" refId="17"/>    
+    <link-end type="TARGET" refId="10"/>  
+  </text-link>  
+  <text-link id="19">    
+    <link-end type="SOURCE" refId="17"/>    
+    <link-end type="TARGET" refId="13"/>  
+  </text-link>
+</sequence-diagram>
